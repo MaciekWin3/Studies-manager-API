@@ -21,3 +21,5 @@ const projectSchema = mongoose.Schema({
     comments: [String],
     coworkers: [String],
 }, {timestamps: true})
+
+module.exports = mongoose.model("Project", projectSchema);

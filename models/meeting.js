@@ -1,5 +1,14 @@
 const mongoose = require('mongoose');
 
+const geoSchema = new mongoose.Schema({
+    type: {
+        type: String,
+        default: "Point"
+    },
+    coordinates: [Number],
+    index: "2dsphere"
+}); 
+
 const meetingSchema = mongoose.Schema({
     _id = mongoose.Types.ObjectId,
     name: {
@@ -19,8 +28,12 @@ const meetingSchema = mongoose.Schema({
         min: 0,
         max: 100
     },
-    comments: [String],
+    comments: 
+        [String],
     typeOfExam:{
         type: String,
-    }
+    },
+    geometry: geoSchema,
 }, {timestamps: true})
+
+module.exports = mongoose.model("Meeting", meetingSchema);

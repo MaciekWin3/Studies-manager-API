@@ -17,7 +17,7 @@ mongoose.connect(
         })
         .catch((err) => console.log('Error, when connecting to DB!'));
 
-
+app.get
 
 app.get('/', (req, res, next) => {
 
