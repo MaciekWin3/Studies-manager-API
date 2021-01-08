@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
 const projectSchema = mongoose.Schema({
-    _id = mongoose.Types.ObjectId,
+    _id: mongoose.Types.ObjectId,
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true,
     },
     deadline: {
         type: Date,
@@ -22,4 +23,5 @@ const projectSchema = mongoose.Schema({
     coworkers: [String],
 }, {timestamps: true})
 
-module.exports = mongoose.model("Project", projectSchema);
+const Project = mongoose.model("Project", projectSchema);
+module.exports = Project;

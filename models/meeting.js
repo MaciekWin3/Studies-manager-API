@@ -5,12 +5,15 @@ const geoSchema = new mongoose.Schema({
         type: String,
         default: "Point"
     },
-    coordinates: [Number],
-    index: "2dsphere"
+    coordinates:{
+        type:[Number],
+        index: "2dsphere"
+    } 
+    
 }); 
 
 const meetingSchema = mongoose.Schema({
-    _id = mongoose.Types.ObjectId,
+    _id: mongoose.Types.ObjectId,
     name: {
         type: String,
         required: true
@@ -36,4 +39,5 @@ const meetingSchema = mongoose.Schema({
     geometry: geoSchema,
 }, {timestamps: true})
 
-module.exports = mongoose.model("Meeting", meetingSchema);
+const Meeting = mongoose.model("Meeting", meetingSchema);
+module.exports = Meeting;

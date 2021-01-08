@@ -1,25 +1,86 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const classSchema = mongoose.Schema({
-    _id = mongoose.Types.ObjectId,
+const classSchema = mongoose.Schema(
+  {
+    _id: mongoose.Types.ObjectId,
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
-    deadline: {
-        type: Date,
-        min: Date.now()
+    dayoftheweek: {
+      type: String,
+      required: true,
     },
-    describtion: {
-        type: String,
+    week: {
+      type: Number,
     },
-    progress:{
-        type: Number,
-        min: 0,
-        max: 100
+    start: [
+      {
+        hour: {
+          type: Number,
+          required: true,
+          min: 0,
+          max: 23,
+        },
+        minute: {
+          type: Number,
+          required: true,
+          min: 0,
+          max: 59,
+        },
+      },
+    ],
+    lenght: [
+      {
+        hour: {
+          type: Number,
+          required: true,
+          min: 0,
+          max: 23,
+        },
+        minute: {
+          type: Number,
+          required: true,
+          min: 0,
+          max: 59,
+        },
+      },
+    ],
+    finish: [
+      {
+        hour: {
+          type: Number,
+          required: true,
+          min: 0,
+          max: 23,
+        },
+        minute: {
+          type: Number,
+          required: true,
+          min: 0,
+          max: 59,
+        },
+      },
+    ],
+    describiton: {
+      type: String
     },
     comments: [String],
-    coworkers: [String],
-}, {timestamps: true})
+    homeworks: [
+      {
+        info: {
+          type: String,
+          required: true,
+        },
+        date: {
+          type: Date,
+          required: true,
+        },
+      },
+    ],
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model("Class", classSchema);
+const Class = mongoose.model("Class", classSchema);
+module.exports = Class;

@@ -1,28 +1,33 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const examSchema = mongoose.Schema({
-    _id = mongoose.Types.ObjectId,
+const examSchema = mongoose.Schema(
+  {
+    _id: mongoose.Types.ObjectId,
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
+      unique: true,
     },
     date: {
-        type: Date,
-        min: Date.now(),
-        required: true,
+      type: Date,
+      min: Date.now(),
+      required: true,
     },
     describtion: {
-        type: String,
+      type: String,
     },
-    progress:{
-        type: Number,
-        min: 0,
-        max: 100
+    progress: {
+      type: Number,
+      min: 0,
+      max: 100,
     },
     comments: [String],
-    typeOfExam:{
-        type: String,
-    }
-}, {timestamps: true})
+    typeOfExam: {
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model("Exam", examSchema);
+const Exam = mongoose.model("Exam", examSchema);
+module.exports = Exam;
