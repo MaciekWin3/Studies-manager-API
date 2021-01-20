@@ -5,13 +5,11 @@ const examSchema = mongoose.Schema(
     _id: mongoose.Types.ObjectId,
     name: {
       type: String,
-      required: true,
       unique: true,
     },
     date: {
       type: Date,
       min: Date.now(),
-      required: true,
     },
     describtion: {
       type: String,

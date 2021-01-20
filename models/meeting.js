@@ -14,9 +14,8 @@ const geoSchema = new mongoose.Schema({
 
 const meetingSchema = mongoose.Schema({
     _id: mongoose.Types.ObjectId,
-    name: {
-        type: String,
-        required: true
+    projectId: {
+        type: mongoose.Types.ObjectId,
     },
     date: {
         type: Date,
@@ -24,16 +23,6 @@ const meetingSchema = mongoose.Schema({
         required: true,
     },
     describtion: {
-        type: String,
-    },
-    progress:{
-        type: Number,
-        min: 0,
-        max: 100
-    },
-    comments: 
-        [String],
-    typeOfExam:{
         type: String,
     },
     geometry: geoSchema,

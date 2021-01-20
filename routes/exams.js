@@ -3,7 +3,9 @@ const router = express.Router();
 
 const ExamsController = require("../controllers/exams");
 
-router.get("/", ExamsController.examsAll);
+const checkAuth = require('../middleware/check-auth');
+
+router.get("/", checkAuth, ExamsController.examsAll);
 
 router.post("/", ExamsController.examNew);
 

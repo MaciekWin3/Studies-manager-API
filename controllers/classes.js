@@ -68,7 +68,7 @@ exports.classUpdateStatus = (req, res, next) => {
     if (error) {
       return res
         .status(400)
-        .send({ message: "Failed to add comment due to invalid params!" });
+        .send({ message: "Update failed!" });
     }
     return res.status(200).send(vclass);
   });
@@ -79,7 +79,7 @@ exports.classDelete = (req, res, next) => {
   Class.findByIdAndDelete(id)
     .then((doc) => {
       res.status(200).json({
-        wiadomość: "Project " + id + " has been deleted/finished!",
+        message: "Project " + id + " has been deleted/finished!",
         info: doc,
       });
     })
@@ -93,9 +93,10 @@ exports.classUpdate = (req, res, next) => {
   })
     .then((doc) => {
       res.status(200).json({
-        wiadomość: "Zmieniono produkt o nr " + id,
+        message: "Product " + id + " changed",
         info: doc,
       });
     })
     .catch((err) => res.status(500).json({ wiadomość: err }));
 };
+
