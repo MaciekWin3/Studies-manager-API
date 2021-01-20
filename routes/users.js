@@ -8,7 +8,7 @@ const router = express.Router();
 
 const User = require("../models/user");
 
-router.post("/signup", (req, res, next) => {
+router.post("/register", (req, res, next) => {
   bcrypt.hash(req.body.password, 10, (err, hash) => {
     if (err) {
       res.status(500).json({ wiadomość: err });
@@ -66,7 +66,7 @@ router.delete("/:userId", (req, res, next) => {
     .catch((err) => res.status(500).json({ message: err }));
 });
 
-//logowanie sie na konto
+
 router.post("/login", (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then((user) => {
@@ -78,7 +78,6 @@ router.post("/login", (req, res, next) => {
           res.status(500).json({ message: err });
         }
         if (result) {
-          //stworzenie JWT
           const token = jwt.sign(
             {
               email: user.email,

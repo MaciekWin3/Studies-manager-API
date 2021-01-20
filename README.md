@@ -85,11 +85,13 @@ router.patch("/:id", checkAuth, MeetingsController.meetingUpdate);
 
 ## Przykładowe zrzuty ekranu
 
-# Logowanie
+# Rejestracja i Logowanie
 
-![Logowanie](screens/Login_Postman.png)
+![Rejestracja](screens/Login_Postman.png)
 
-![Logowanie](screens/Mail.png)
+![Rejestracja](screens/Mail.png)
+
+![Login](screens/Login.png)
 
 # Cron
 
