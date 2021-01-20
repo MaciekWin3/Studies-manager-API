@@ -7,16 +7,16 @@ const checkAuth = require('../middleware/check-auth');
 
 router.get("/", checkAuth, ExamsController.examsAll);
 
-router.post("/", ExamsController.examNew);
+router.post("/", checkAuth, ExamsController.examNew);
 
-router.get("/searchbyname/:name", ExamsController.examSearchByName);
+router.get("/searchbyname/:name", checkAuth, ExamsController.examSearchByName);
 
-router.get("/:id", ExamsController.examSearchById);
+router.get("/:id", checkAuth, ExamsController.examSearchById);
 
-router.patch("/updatestatus/:id", ExamsController.examUpdateStatus);
+router.patch("/updatestatus/:id", checkAuth, ExamsController.examUpdateStatus);
 
-router.delete("/:id", ExamsController.examDelete);
+router.delete("/:id", checkAuth, ExamsController.examDelete);
 
-router.patch("/:id", ExamsController.examUpdate);
+router.patch("/:id", checkAuth, ExamsController.examUpdate);
 
 module.exports = router;

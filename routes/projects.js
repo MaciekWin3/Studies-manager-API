@@ -5,18 +5,18 @@ const ProjectsController = require("../controllers/projects");
 
 const checkAuth = require('../middleware/check-auth');
 
-router.get("/", ProjectsController.projectsAll);
+router.get("/", checkAuth, ProjectsController.projectsAll);
 
-router.post("/", ProjectsController.projectNew);
+router.post("/", checkAuth, ProjectsController.projectNew);
 
-router.get("/searchbyname/:name", ProjectsController.projectSearchByName);
+router.get("/searchbyname/:name", checkAuth, ProjectsController.projectSearchByName);
 
-router.get("/:id", ProjectsController.projectSearchById);
+router.get("/:id", checkAuth, ProjectsController.projectSearchById);
 
-router.patch("/updatestatus/:id", ProjectsController.projectUpdateStatus);
+router.patch("/updatestatus/:id", checkAuth, ProjectsController.projectUpdateStatus);
 
-router.delete("/:id", ProjectsController.projectDelete);
+router.delete("/:id", checkAuth, ProjectsController.projectDelete);
 
-router.patch("/:id", ProjectsController.projectUpdate);
+router.patch("/:id", checkAuth, ProjectsController.projectUpdate);
 
 module.exports = router;

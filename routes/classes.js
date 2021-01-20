@@ -5,19 +5,19 @@ const ClassesController = require("../controllers/classes");
 
 const checkAuth = require('../middleware/check-auth');
 
-router.get("/", ClassesController.timetable);
+router.get("/", checkAuth, ClassesController.timetable);
 
-router.post("/", ClassesController.classNew);
+router.post("/", checkAuth, ClassesController.classNew);
 
-router.get("/searchbyname/:name", ClassesController.classSearchByName);
+router.get("/searchbyname/:name", checkAuth, ClassesController.classSearchByName);
 
-router.get("/:name", ClassesController.classSearchById);
+router.get("/:name", checkAuth, ClassesController.classSearchById);
 
-router.patch("/updatestatus/:id", ClassesController.classUpdateStatus);
+router.patch("/updatestatus/:id", checkAuth, ClassesController.classUpdateStatus);
 
-router.delete("/:id", ClassesController.classDelete);
+router.delete("/:id", checkAuth, ClassesController.classDelete);
 
-router.patch("/:id", ClassesController.classUpdate);
+router.patch("/:id", checkAuth, ClassesController.classUpdate);
 
 
 

@@ -5,16 +5,16 @@ const MeetingsController = require("../controllers/meetings");
 
 const checkAuth = require('../middleware/check-auth');
 
-router.get("/", MeetingsController.meetings);
+router.get("/", checkAuth, MeetingsController.meetings);
 
-router.post("/", MeetingsController.meetingNew);
+router.post("/", checkAuth, MeetingsController.meetingNew);
 
-router.get("/:projectId", MeetingsController.meetingProjects);
+router.get("/:projectId", checkAuth, MeetingsController.meetingProjects);
 
-router.get("/:id", MeetingsController.meetingSearchById);
+router.get("/:id", checkAuth, MeetingsController.meetingSearchById);
 
-router.delete("/:id", MeetingsController.meetingDelete);
+router.delete("/:id", checkAuth, MeetingsController.meetingDelete);
 
-router.patch("/:id", MeetingsController.meetingUpdate);
+router.patch("/:id", checkAuth, MeetingsController.meetingUpdate);
 
 module.exports = router;

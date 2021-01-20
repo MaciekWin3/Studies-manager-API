@@ -5,7 +5,17 @@ Projekt na zaliczenie przedmiotu Programowanie aplikacji mobilnych
 ## Opis projektu
 
 Proste REST APi, które ułatwi zarządzanie projektami, spotkaniami, egzaminami oraz zapewni prosty i szybki dostęp do planu zajęć.
-Aplikacja korzysta z Expressa
+
+# Technologie oraz moduły, które wykorzystaliśmy w projekcie:
+* NodeJS
+* Express
+* MongoDB
+* Mongoose
+* BodyParser
+* JsonWebtoken
+* Bcrypt
+* Node-schedule
+* Nodemailer
 
 ## Endpoints
 
