@@ -4,7 +4,7 @@ Projekt na zaliczenie przedmiotu Programowanie aplikacji mobilnych
 
 # Opis projektu
 
-Proste REST APi, które ułatwi zarządzanie projektami, spotkaniami, egzaminami oraz zapewni prosty i szybki dostęp do planu zajęć.
+Proste REST API, które ułatwi zarządzanie projektami, spotkaniami, egzaminami oraz zapewni prosty i szybki dostęp do planu zajęć.
 
 # Technologie oraz moduły, które wykorzystaliśmy w projekcie:
 * NodeJS
@@ -95,6 +95,8 @@ router.patch("/:id", checkAuth, MeetingsController.meetingUpdate);
 
 # Cron
 
+Usuwa projekty po terminie oraz zakończone egzaminy i spotkania
+
 ![Cron](screens/cron.png)
 
 # Endpoints
@@ -121,6 +123,12 @@ router.get("/searchbyname/:name", checkAuth, ExamsController.examSearchByName);
 
 ```javascript
 router.get("/", checkAuth, ClassesController.timetable);
+```
+
+![Endpointy](screens/editClasses.png)
+
+```javascript
+router.patch("/:id", checkAuth, ClassesController.classUpdate);
 ```
 
 ## Twórcy
