@@ -2,7 +2,7 @@
 
 Projekt na zaliczenie przedmiotu Programowanie aplikacji mobilnych
 
-## Opis projektu
+# Opis projektu
 
 Proste REST APi, które ułatwi zarządzanie projektami, spotkaniami, egzaminami oraz zapewni prosty i szybki dostęp do planu zajęć.
 
@@ -87,7 +87,7 @@ router.patch("/:id", checkAuth, MeetingsController.meetingUpdate);
 
 # Logowanie
 
-[Logowanie](screens/Mail.png)
+![Logowanie](screens/Mail.png)
 
 ## Twórcy
 Maciej Winnik & Piotr Kiedrowski s22-32
