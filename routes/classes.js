@@ -5,7 +5,7 @@ const ClassesController = require("../controllers/classes");
 
 const checkAuth = require('../middleware/check-auth');
 
-router.get("/", checkAuth, ClassesController.timetable);
+router.get("/", ClassesController.timetable);
 
 router.post("/", checkAuth, ClassesController.classNew);
 

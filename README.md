@@ -67,7 +67,7 @@ router.delete("/:id", checkAuth, MeetingsController.meetingDelete);
 
 router.patch("/:id", checkAuth, MeetingsController.meetingUpdate);
 
-//Exams
+//Meetings
 
 router.get("/", checkAuth, MeetingsController.meetings);
 
@@ -99,11 +99,29 @@ router.patch("/:id", checkAuth, MeetingsController.meetingUpdate);
 
 # Endpoints
 
+```javascript
+router.get("/", checkAuth, MeetingsController.meetings);
+```
+
 ![Endpointy](screens/getProject.png)
+
+```javascript
+router.post("/", checkAuth, MeetingsController.meetingNew);
+```
 
 ![Endpointy](screens/createMeeting.png)
 
+```javascript
+router.get("/searchbyname/:name", checkAuth, ExamsController.examSearchByName);
+```
+
 ![Endpointy](screens/nameExams.png)
+
+```javascript
+router.get("/", checkAuth, ClassesController.timetable);
+```
+
+![Endpointy](screens/classes.png)
 
 ## Twórcy
 Maciej Winnik & Piotr Kiedrowski s22-32
