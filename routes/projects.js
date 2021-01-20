@@ -3,6 +3,8 @@ const router = express.Router();
 
 const ProjectsController = require("../controllers/projects");
 
+const checkAuth = require('../middleware/check-auth');
+
 router.get("/", ProjectsController.projectsAll);
 
 router.post("/", ProjectsController.projectNew);

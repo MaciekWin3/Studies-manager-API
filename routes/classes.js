@@ -3,6 +3,8 @@ const router = express.Router();
 
 const ClassesController = require("../controllers/classes");
 
+const checkAuth = require('../middleware/check-auth');
+
 router.get("/", ClassesController.timetable);
 
 router.post("/", ClassesController.classNew);
