@@ -23,65 +23,71 @@ Proste REST APi, które ułatwi zarządzanie projektami, spotkaniami, egzaminami
 
 //Classes
 
-router.get("/", ClassesController.timetable);
+router.get("/", checkAuth, ClassesController.timetable);
 
-router.post("/", ClassesController.classNew);
+router.post("/", checkAuth, ClassesController.classNew);
 
-router.get("/searchbyname/:name", ClassesController.classSearchByName);
+router.get("/searchbyname/:name", checkAuth, ClassesController.classSearchByName);
 
-router.get("/:name", ClassesController.classSearchById);
+router.get("/:name", checkAuth, ClassesController.classSearchById);
 
-router.patch("/updatestatus/:id", ClassesController.classUpdateStatus);
+router.patch("/updatestatus/:id", checkAuth, ClassesController.classUpdateStatus);
 
-router.delete("/:id", ClassesController.classDelete);
+router.delete("/:id", checkAuth, ClassesController.classDelete);
 
-router.patch("/:id", ClassesController.classUpdate);
+router.patch("/:id", checkAuth, ClassesController.classUpdate);
 
 //Exams
 
 router.get("/", checkAuth, ExamsController.examsAll);
 
-router.post("/", ExamsController.examNew);
+router.post("/", checkAuth, ExamsController.examNew);
 
-router.get("/searchbyname/:name", ExamsController.examSearchByName);
+router.get("/searchbyname/:name", checkAuth, ExamsController.examSearchByName);
 
-router.get("/:id", ExamsController.examSearchById);
+router.get("/:id", checkAuth, ExamsController.examSearchById);
 
-router.patch("/updatestatus/:id", ExamsController.examUpdateStatus);
+router.patch("/updatestatus/:id", checkAuth, ExamsController.examUpdateStatus);
 
-router.delete("/:id", ExamsController.examDelete);
+router.delete("/:id", checkAuth, ExamsController.examDelete);
 
-router.patch("/:id", ExamsController.examUpdate);
+router.patch("/:id", checkAuth, ExamsController.examUpdate);
 
 //Projects
 
-router.get("/", MeetingsController.meetings);
+router.get("/", checkAuth, MeetingsController.meetings);
 
-router.post("/", MeetingsController.meetingNew);
+router.post("/", checkAuth, MeetingsController.meetingNew);
 
-router.get("/:projectId", MeetingsController.meetingProjects);
+router.get("/:projectId", checkAuth, MeetingsController.meetingProjects);
 
-router.get("/:id", MeetingsController.meetingSearchById);
+router.get("/:id", checkAuth, MeetingsController.meetingSearchById);
 
-router.delete("/:id", MeetingsController.meetingDelete);
+router.delete("/:id", checkAuth, MeetingsController.meetingDelete);
 
-router.patch("/:id", MeetingsController.meetingUpdate);
+router.patch("/:id", checkAuth, MeetingsController.meetingUpdate);
 
 //Exams
 
-router.get("/", MeetingsController.meetings);
+router.get("/", checkAuth, MeetingsController.meetings);
 
-router.post("/", MeetingsController.meetingNew);
+router.post("/", checkAuth, MeetingsController.meetingNew);
 
-router.get("/:projectId", MeetingsController.meetingProjects);
+router.get("/:projectId", checkAuth, MeetingsController.meetingProjects);
 
-router.get("/:id", MeetingsController.meetingSearchById);
+router.get("/:id", checkAuth, MeetingsController.meetingSearchById);
 
-router.delete("/:id", MeetingsController.meetingDelete);
+router.delete("/:id", checkAuth, MeetingsController.meetingDelete);
 
-router.patch("/:id", MeetingsController.meetingUpdate);
+router.patch("/:id", checkAuth, MeetingsController.meetingUpdate);
 
 ```
+
+## Zrzuty ekranu
+
+# Logowanie
+
+[Logowanie](screens/Mail.png)
 
 ## Twórcy
 Maciej Winnik & Piotr Kiedrowski s22-32
