@@ -83,11 +83,25 @@ router.patch("/:id", checkAuth, MeetingsController.meetingUpdate);
 
 ```
 
-## Zrzuty ekranu
+## Przykładowe zrzuty ekranu
 
 # Logowanie
 
+![Logowanie](screens/Login_Postman.png)
+
 ![Logowanie](screens/Mail.png)
+
+# Cron
+
+![Cron](screens/cron.png)
+
+# Endpoints
+
+![Endpointy](screens/getProject.png)
+
+![Endpointy](screens/createMeeting.png)
+
+![Endpointy](screens/nameExams.png)
 
 ## Twórcy
 Maciej Winnik & Piotr Kiedrowski s22-32
