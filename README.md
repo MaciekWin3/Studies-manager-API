@@ -99,7 +99,7 @@ Usuwa projekty po terminie oraz zakończone egzaminy i spotkania
 
 ![Cron](screens/cron.png)
 
-# Endpoints
+# Przykładowe Endpointy
 
 ![Endpointy](screens/getProject.png)
 
